@@ -9,17 +9,18 @@ using namespace std;
 
 double rn_gn(double* Z) {
     
-    for (int i=0; i<100; i++) {
-        Z[i] = rand() /1 + 0;        
+    for (int i =0; i<101; i++) {
+        
+        Z[i] = ((double)rand() / (RAND_MAX));
     }
 }
 
 int main() {
-    
-    double A[100];
+    srand(time(0));
+    double A[101];
     rn_gn(A);
     ofstream out("rand.dat");
-    for (int i=0; i<100; i++) {
+    for (int i=0; i<101; i++) {
         out << "A[" << i << "] =" << A[i] << endl;
     }
     out.close();
